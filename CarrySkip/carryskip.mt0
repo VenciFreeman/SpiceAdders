@@ -1,0 +1,6 @@
+$DATA1 SOURCE='HSPICE' VERSION='J-2014.09-2 64-BIT'
+.TITLE 'carry_skip_adder'
+ tplh             tphl             tp               temper          
+ alter#          
+ -2.391e-11        2.970e-11        2.898e-12         90.0000       
+ 1               

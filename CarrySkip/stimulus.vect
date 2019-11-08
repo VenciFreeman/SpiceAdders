@@ -1,0 +1,31 @@
+﻿; specifies # of bits associated with each vector
+radix 44444444 44444444 1
+
+; defines name for each vector
+vname Va[15:0] Vb[15:0]  Vc
+
+; defines vector as input or output
+io iiiiiiii iiiiiiii oooooooo o
+
+; defines time unit
+tunit ps
+
+; signal delay
+tdelay 100 FFFFFFFF FFFFFFFF 1
+
+; slope time
+slope 15
+
+; high voltage and low voltage
+vih 0.85 FFFFFFFF FFFFFFFF 1
+vil  0   FFFFFFFF FFFFFFFF 1
+
+; tavular data section
+period 1000
+
+;;;;;;;;;;;;;;;;;;;dynamic;;;;;;;;;;;;;;;;;;;
+
+00000000 FFFFFFFF 0
+FFFFFFFF 00000000 0
+55555555 00000000 0
+00000000 55555555 0

@@ -1,0 +1,25 @@
+* PTM High Performance 16nm Metal Gate / High-K / Strained-Si
+* LIB Creat by Haozheng Wang at 20:40 2019/3/23
+* Transistor calls can be made as follows:
+* The param.inc file contains variables to calculate Effective Width and provide
+* nominal supply voltage. The included variables are:
+* vdd = supply voltage
+* lg = Gate Length
+* wg = Gate Width
+***********************************************************************************
+.LIB ptm16hp_bulk
+
+.subckt nfet d g s x l=lg w=wg
+.include './16nm_HP.pm'
+mnfet d g s x nmos L=l  W=w
+.ends nfet
+
+.subckt pfet d g s x l=lg w=wg
+.include './16nm_HP.pm'
+mpfet d g s x pmos L=l W=w
+.ends pfet
+
+.lib './param.inc' 16nm_bulk
+
+.ENDL ptm16hp_bulk
+********************************************
