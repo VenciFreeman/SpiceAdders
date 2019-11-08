@@ -5,7 +5,7 @@
 - This Project uses SPICE to simulate and optimize a 16-bit adder.
   - The main program simulated a **16-bit carry skip adder**;
   - Used stimulus vector;
-  - Tried **Kogge-Stone adder** and modular, but *haven't achieve it*.
+  - Tried **Kogge-Stone adder** and modular, but **haven't achieve it**.
 - Programming Environment: Visual Studio Code;
 - Simulating Environment: hspui J-2014.09-2;
 - Viewing Environment: SPICE Explorer c2009.03.
@@ -36,18 +36,7 @@ tp   =  2.8979p
 
 ### Fixed size
 
-Fixed size block-carry-skip adders split the bits of the input bits into blocks of bits each, resulting in $k=\frac{n}{m}$ blocks. The critical path consists of the ripple path and the skip element of the first block, the skip paths that are enclosed between the first and the last block, and finally the ripple-path of the last block:
-$$
-T(n)= T_{CRA[0:C_{out}]}(m)+T{CSK}+(k-2)T_{CSK}+T_{CRA}(m)
-$$
-The optimal block size for a given adder width n is derived by equating to 0:
-$$
-\frac{\text{d}~T_{CSA}(n)}{\text{d}~m}=0\to m_{1,2}=\pm\sqrt{\frac{n}{2}}
-$$
-Only positive block sizes are realizable:
-$$
-m=\sqrt{{n}{2}}
-$$
+Fixed size block-carry-skip adders split the bits of the input bits into blocks of bits each, resulting in k=n/m blocks. The critical path consists of the ripple path and the skip element of the first block, the skip paths that are enclosed between the first and the last block, and finally the ripple-path of the last block. The optimal block size for a given adder width n is derived by equating to 0. And only positive block sizes are realizable: m=sqrt(n/2)
 
 ### Variable size
 
@@ -59,7 +48,7 @@ This problem is made complex by the fact that a carry-skip adders are implemente
 
 ## Conclusions
 
-A carry-skip adder consists of a simple ripple carry-adder with a special speed up carry chain called a skip chain. Carry skip adder is a fast adder compared to ripple carry adder when addition of large number of bits take place; carry skip adder has $O(\sqrt{n})$ delay provides a good compromise in terms of delay, along with a simple and regular layout This chain defines the distribution of ripple carry blocks, which compose the skip adder. A carry-skip adder is designed to speed up a wide adder by aiding the propagation of a carry bit around a portion of the entire adder. Actually the ripple carry adder is faster for small values of N.
+A carry-skip adder consists of a simple ripple carry-adder with a special speed up carry chain called a skip chain. Carry skip adder is a fast adder compared to ripple carry adder when addition of large number of bits take place; carry skip adder has O(sqrt(n)) delay provides a good compromise in terms of delay, along with a simple and regular layout This chain defines the distribution of ripple carry blocks, which compose the skip adder. A carry-skip adder is designed to speed up a wide adder by aiding the propagation of a carry bit around a portion of the entire adder. Actually the ripple carry adder is faster for small values of N.
 
 - the basic idea is to form multi-level carry chains
   - Break the bits into groups
